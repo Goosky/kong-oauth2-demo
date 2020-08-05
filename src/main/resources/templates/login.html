@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Kong OAuth2.0 - Login</title>
+</head>
+<body>
+<h1><span>Login</span></h1>
+<form action="/doLogin" method="POST">
+    username:<input type="text" name="username" value="zcq"> <br/>
+    password:<input type="text" name="password" value="123"> <br/>
+    <input type="text" hidden name="callback" th:value="${#request.getAttribute('callback')}" readonly> <br/>
+    <input type="submit" value="Login">
+</form>
+</body>
+</html>

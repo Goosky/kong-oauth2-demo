@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kong OAuth2.0 - AuthorizeCode</title>
+</head>
+<body>
+<h1><span>AuthorizeCode</span></h1>
+<form action="/authorize" method="GET">
+    response_type:<input type="text" name="response_type" value="code" readonly> <br/>
+    scope:<input type="text" name="scope" value="email"> <br/>
+    client_id:<input type="text" name="client_id" value="client_id"> <p/>
+    <input type="submit" value="Authorize">
+</form>
+</body>
+</html>

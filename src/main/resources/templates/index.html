@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Kong OAuth2.0 - Index</title>
+</head>
+<body>
+<a href="route.html">Route</a> <span th:text="${#session.getAttribute('addrouteok')}"/><br/>
+<a th:href="login.html" title="login">Login</a>  <span th:text="${#session.getAttribute('logged')}"/><br/>
+<a href="/logout" title="Logout">Logout</a> <span th:text="${#session.getAttribute('logoutok')}"/><br/>
+<a href="password.html" title="Password">Password</a> <span th:text="${#session.getAttribute('passwordlogged')}"/><br/>
+<a href="authorize.html" title="authorizeCode">authorizeCode</a> <span th:text="${#session.getAttribute('authorizeok')}"/> <br/>
+authorizeCode => <span th:text="${#session.getAttribute('code')}"/><br/>
+access_token => <span th:text="${#session.getAttribute('access_token')}"/><br/>
+refresh_token => <span th:text="${#session.getAttribute('refresh_token')}"/><br/>
+<a th:href="${'/refreshToken?client_id=client_id&refresh_token='+ #session.getAttribute('refresh_token')}">refreshToken</a><br/>
+<a href="#resource" title="get resource">http://192.168.200.204:8000/weather/full/CN101010400?access_token=<span th:text="${#session.getAttribute('access_token')}" />⏬⏬⏬</a><br/>
+<iframe id="resource" th:src="${'http://192.168.200.204:8000/weather/full/CN101010400?access_token=' + #session.getAttribute('access_token')}" width="100%" height="600px"></iframe>
+</body>
+</html>
